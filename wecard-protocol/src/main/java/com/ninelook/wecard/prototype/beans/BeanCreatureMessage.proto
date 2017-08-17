@@ -1,0 +1,45 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+import "beans/BeanSceneMessage.proto";
+
+//creature信息
+message CreatureInfo {
+    //唯一ID
+    required int32 eid = 1;
+
+    //类型
+    required int32 type = 2;
+
+    //serverId
+    required int32 serverId = 3;
+
+    //阵营
+    required int32 camp = 4;
+
+    //等级
+    required int32 level = 5;
+
+    //技能ID
+    required int32 skillId = 6;
+
+    //血量
+    required int32 blood = 7;
+
+    //攻击力
+    required int32 attackNum = 8;
+
+    //防御力
+    required int32 defenceNum = 9;
+
+    //魔法攻击力
+    required int32 magicAttackNum = 10;
+
+    //魔法防御力
+    required int32 magicDefense = 11;
+
+    //移动速度
+    required float speed = 12;
+
+    //X轴
+    required int32 x = 13;
+}

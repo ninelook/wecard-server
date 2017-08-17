@@ -1,0 +1,48 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+import "beans/BeanSceneMessage.proto";
+
+//英雄信息
+message HeroInfo {
+    //用户ID
+    required int64 uid = 1;
+
+    //唯一ID
+    required int32 eid = 2;
+
+    //实体类型
+    required int32 type = 3;
+
+    //英雄所属阵型
+    required int32 camp = 4;
+
+    //武将serverId
+    required int32 serverId = 5;
+
+    //武将等级
+    required int32 level = 6;
+
+    //技能ID
+    required int32 skillId = 7;
+
+    //武将血量
+    required int32 blood = 8;
+
+    //攻击力
+    required int32 attackNum = 9;
+
+    //防御力
+    required int32 defenceNum = 10;
+
+    //魔法攻击力
+    required int32 magicAttackNum = 11;
+
+    //魔法防御力
+    required int32 magicDefense = 12;
+
+    //移动速度
+    required float speed = 13;
+
+    //X轴
+    required int32 x = 14;
+}

@@ -1,0 +1,13 @@
+option java_package = "com.ninelook.wecard.protocol.apis";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHomeMessage.proto";
+import "beans/BeanHeroMessage.proto";
+import "beans/BeanEntityMessage.proto";
+
+
+//英雄移动
+message SReqHeroMove {
+    //英雄移动信息
+    required PosInfo heroPosInfo = 1;
+}

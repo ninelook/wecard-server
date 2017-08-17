@@ -1,0 +1,49 @@
+option java_package = "com.ninelook.wecard.protocol.apis";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHomeMessage.proto";
+import "beans/BeanHeroMessage.proto";
+
+//房间建立
+message ReqHomeCreate {
+    required int32 mapId = 1;
+}
+
+
+//房间加入
+message ReqHomeJoin {
+    required int32 homeId = 1;
+}
+
+//房间退出
+message ReqHomeExit {
+    required int32 homeId = 1;
+}
+
+//房间开始
+message ReqHomeGo {
+    required int32 homeId = 1;
+}
+
+//获取用户基本信息
+message ReqGetUserInfo {
+    required int32 homeId = 1;
+
+    //需要获取的用户ID列表
+    repeated int64 lUid = 2;
+}
+
+//资源加载完成通知信息
+message ReqLoadingFinish {
+    //房间ID
+    required int32 homeId = 1;
+
+    //完成加载的用户ID
+    repeated int64 lUid = 2;
+}
+
+//获取指定地图下得房间列表
+message ReqGetList {
+    //地图ID
+    required int32 mapId = 1;
+}

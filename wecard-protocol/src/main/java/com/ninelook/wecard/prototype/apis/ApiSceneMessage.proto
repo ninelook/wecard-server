@@ -1,0 +1,8 @@
+option java_package = "com.ninelook.wecard.protocol.apis";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHomeMessage.proto";
+
+//登陆接口
+message ReqSceneLogin {
+}

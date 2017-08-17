@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<system-config version="1">
+    <server-url>http://davinci.hudson.app.happyelements.sh/game/protocol?uid=</server-url>
+</system-config>

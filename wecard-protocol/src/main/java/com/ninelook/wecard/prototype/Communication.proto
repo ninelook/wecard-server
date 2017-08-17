@@ -1,0 +1,27 @@
+option java_package = "com.ninelook.wecard.protocol";
+
+//import apis
+import "Request.proto";
+import "Response.proto";
+
+//Hesh Req Message
+message HeshReqMessage {
+    //////////////////////////
+    //////////SYSTEM//////////
+    //////////////////////////
+
+    //SYSTEM-MESSAGE ID
+    required int32 mid = 1;
+
+    //SYSTEM-USER ID
+    required int64 uid = 2;
+
+    //////////////////////////
+    ////////////API///////////
+    //////////////////////////
+    //API - 场景层
+    optional SceneReqMessage sceneReqMessage = 10;
+
+    //API - 服务层
+    optional ServiceReqMessage serviceReqMessage = 11;
+}

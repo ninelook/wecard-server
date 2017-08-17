@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<system-config version="44">
+    <socketServer>
+        <host>127.0.0.1</host>
+        <port>8087</port>
+    </socketServer>
+
+    <socketConfig>
+        <debug>1</debug>
+    </socketConfig>
+
+    <redisServer>
+        <host>127.0.0.1</host>
+        <port>6379</port>
+        <db>9</db>
+    </redisServer>
+
+    <redisSessionServer>
+        <host>127.0.0.1</host>
+        <port>6379</port>
+        <db>5</db>
+    </redisSessionServer>
+
+
+    <mysqlServer>
+        <driverClass>com.mysql.jdbc.Driver</driverClass>
+        <jdbcUrl>jdbc:mysql://127.0.0.1:3306/wecard?characterEncoding=utf8</jdbcUrl>
+        <user>root</user>
+        <password>duomai!@#</password>
+    </mysqlServer>
+
+
+</system-config>

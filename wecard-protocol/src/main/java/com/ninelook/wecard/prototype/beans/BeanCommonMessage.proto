@@ -1,0 +1,17 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+//Item - Integer:Integer
+message ItemByIntInt {
+    //key
+    required int32 key = 1;
+    //value
+    required int32 value = 2;
+}
+
+//Item - Long:Integer
+message ItemByLongInt {
+    //key
+    required int64 key = 1;
+    //value
+    required int32 value = 2;
+}

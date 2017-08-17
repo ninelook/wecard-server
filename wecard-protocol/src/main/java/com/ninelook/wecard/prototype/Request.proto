@@ -1,0 +1,64 @@
+option java_package = "com.ninelook.wecard.protocol";
+
+import "apis/ApiSceneMessage.proto";
+import "apis/ApiHomeMessage.proto";
+import "apis/ApiHeroMessage.proto";
+import "apis/ApiFightMessage.proto";
+
+/**
+ * 场景层
+ */
+message SceneReqMessage {
+
+    //////////////////////////
+    /////////BUSINESS/////////
+    //////////////////////////
+    //API - 场景 - 用户登陆请求
+    optional ReqSceneLogin reqSceneLogin = 10;
+
+    //API - 房间 - 建立一个新的房间
+    optional ReqHomeCreate reqHomeCreate = 11;
+
+    //API - 房间 - 加入一个房间
+    optional ReqHomeJoin reqHomeJoin = 12;
+
+    //API - 房间 - 开始游戏
+    optional ReqHomeGo reqHomeGo = 13;
+
+    //API - 房间 - 退出房间
+    optional ReqHomeExit reqHomeExit = 14;
+
+    //API - 房间 - 获取用户基本信息
+    optional ReqGetUserInfo reqGetUserInfo = 15;
+
+    //API - 房间 - 前台资源加载完成
+    optional ReqLoadingFinish reqLoadingFinish = 16;
+
+    //API - 房间 - 获取指定地图的房间列表
+    optional ReqGetList reqGetList = 17;
+}
+
+/**
+ * 服务层
+ */
+message ServiceReqMessage {
+    //////////////////////////
+    //////////SYSTEM//////////
+    //////////////////////////
+    //HOME ID
+    required int32 homeId = 1;
+
+    //////////////////////////
+    /////////BUSINESS/////////
+    //////////////////////////
+
+    //APi - 英雄移动
+    optional SReqHeroMove sreqHeroMove = 11;
+
+    //API - 攻击一次
+    optional SReqAttack sreqAttack = 12;
+
+    //API - 使用技能
+    optional SReqSkillUse sreqSkillUse = 13;
+}
+

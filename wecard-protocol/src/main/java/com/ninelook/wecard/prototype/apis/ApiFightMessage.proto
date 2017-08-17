@@ -1,0 +1,29 @@
+option java_package = "com.ninelook.wecard.protocol.apis";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHomeMessage.proto";
+import "beans/BeanHeroMessage.proto";
+import "beans/BeanEntityMessage.proto";
+import "beans/BeanFightMessage.proto";
+
+
+//API-英雄攻击
+message SReqAttack {
+    //防御者列表
+    repeated FighterInfo caster = 1;
+
+    //攻击者信息
+    required FighterInfo attacker = 2;
+
+    //当前连续攻击的序列
+    required int32 serial = 3;
+}
+
+//API-英雄技能
+message SReqSkillUse {
+    //防御者列表
+    repeated FighterInfo caster = 1;
+
+    //发起者信息
+    required FighterInfo attacker = 2;
+}

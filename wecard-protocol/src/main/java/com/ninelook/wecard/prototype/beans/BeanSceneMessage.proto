@@ -1,0 +1,51 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+
+message SLong {
+    required int64 value = 1;
+}
+
+message SInt {
+    required int32 value = 1;
+}
+
+
+//用户系统信息
+message PlayerInfo {
+    //用户ID
+    required int64 uid = 1;
+
+    //房间ID
+    required int32 homeId = 2;
+
+    //用户状态
+    required int32 status = 3;
+}
+
+//用户基本信息
+message UserInfo {
+    //uid
+    required int64 uid = 1;
+
+    //用户名称
+    required string name = 2;
+
+    //exp
+    required int32 exp = 3;
+
+    //用户等级
+    required int32 level = 4;
+
+    //主将英雄ID
+    required int32 masterHeroId = 5;
+
+    //主将等级
+    required int32 masterHeroLevel = 6;
+}
+
+//服务器信息
+message ServerInfo {
+    //服务器当前时间(毫秒)
+    required int64 currentTimeMillis = 1;
+}
+

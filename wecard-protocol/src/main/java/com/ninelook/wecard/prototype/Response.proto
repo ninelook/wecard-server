@@ -1,0 +1,87 @@
+option java_package = "com.ninelook.wecard.protocol";
+
+//import beans
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHomeMessage.proto";
+import "beans/BeanHeroMessage.proto";
+import "beans/BeanFightMessage.proto";
+import "beans/BeanEntityMessage.proto";
+import "beans/BeanCreatureMessage.proto";
+import "beans/BeanCommonMessage.proto";
+
+
+//Hesh Res Message
+message HeshResMessage {
+    //////////////////////////
+    //////////SYSTEM//////////
+    //////////////////////////
+
+    //SYSTEM-MESSAGE ID
+    required int32 mid = 1;
+
+    //SYSTEM-CODE(0为成功, 其它均为错误码)
+    required int32 code = 2 [default = 0];
+
+    //SYSTEM-PUSH(是否为推送消息)
+    optional bool push = 3 [default = false];
+
+    //////////////////////////
+    ////////BEANS-RES///////////
+    //////////////////////////
+
+    //服务器信息
+    optional ServerInfo serverInfo = 10;
+
+    //房间信息
+    optional HomeInfo homeInfo = 11;
+
+    //玩家信息
+    optional PlayerInfo playerInfo = 12;
+
+    //英雄信息
+    optional HeroInfo heroInfo = 13;
+
+    //战场信息
+    optional WarInfo warInfo = 14;
+
+    //英雄位置信息
+    optional PosInfo heroPosInfo = 15;
+
+    //攻击返回信息
+    optional FightAttackResultInfo fightAttackResultInfo = 16;
+
+    //列表-用户基本信息
+    repeated UserInfo lUserInfo = 17;
+
+    //资源加载完成通知信息
+    optional LoadedInfo loadedInfo = 18;
+
+    //房间开始信息
+    optional HomeGoInfo homeGoInfo = 19;
+
+    //退出房间信息
+    optional HomeExitInfo homeExitInfo = 20;
+
+    //房间开始信息
+    optional SkillResultInfo skillResultInfo = 21;
+
+    //战斗结束信息
+    optional WarFinishInfo warFinishInfo = 22;
+
+    //地图下的房间列表信息
+    optional MapHomeListInfo mapHomeListInfo = 23;
+
+
+
+    //推送 - 死亡返回信息
+    optional DeadInfo deadInfo = 101;
+
+    //推送 - 野怪刷新返回信息
+    repeated CreatureInfo creatureRefreshInfo = 102;
+
+    //推送 - buff信息推送
+    optional BuffEntityInfo buffEntityInfo = 103;
+
+    //推送 - 实体刷新返回信息
+    repeated EntityInfo entityRefreshInfo = 104;
+}

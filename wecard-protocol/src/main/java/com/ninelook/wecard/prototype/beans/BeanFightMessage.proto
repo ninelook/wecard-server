@@ -1,0 +1,118 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanEntityMessage.proto";
+import "beans/BeanCommonMessage.proto";
+
+
+//参战者信息
+message FighterInfo {
+    //防御者eid
+    required int32 eid = 1;
+}
+
+//攻击方攻击特征信息
+message AttackFeatureInfo {
+    //攻击力
+    required int32 attackNum = 1;
+
+    //攻击效果(1:暴击, 2:?)
+    repeated int32 effect = 2;
+}
+
+//防御方防御特征信息
+message DefenceFeatureInfo {
+    //eid
+    optional int32 eid = 1;
+
+    //损失血量
+    required int32 lossNum = 2;
+
+    //剩余血量
+    optional int32 currentBloodNum = 3;
+
+    //防御效果(1:躲避, 2:?)
+    repeated int32 effect = 4;
+}
+
+//每一次序列攻击攻防双方信息, 防守方为多人.
+message FightSerialInfo {
+    //攻击序列
+    required int32 serial = 1;
+
+    //攻击方特征信息
+    required AttackFeatureInfo attackFeatureInfo = 2;
+
+    //防守方特征信息
+    repeated DefenceFeatureInfo defenceFeatureInfo = 3;
+}
+
+
+//攻击结果信息
+message FightAttackResultInfo {
+    //攻击方eid
+    required int32 eid = 1;
+
+    //攻击消息序列号(前端使用)
+    optional int32 sid = 2;
+
+    //每一次序列攻击攻防双方信息
+    repeated FightSerialInfo fightSerialInfo = 3;
+}
+
+//BUFF更新信息
+message BuffEntityInfo {
+    //buffId
+    required int32 buffId = 1;
+
+    //buff更新状态(1:已开始, 2:已结束)
+    required int32 status = 2;
+
+    //buff影响的实体信息
+    required EntityInfo entityInfo = 3;
+}
+
+//技能返回信息 - 攻击性技能
+message SkillResultByAttackInfo {
+    required FightAttackResultInfo fightAttackResultInfo = 1;
+}
+
+//技能返回信息 - 加血技能
+message SkillResultByBloodInfo {
+
+    //加血受益实体列表 k:实体ID v:加血数量
+    repeated ItemByIntInt item = 1;
+}
+
+//技能返回信息 - 触发BUFF技能
+message SkillResultByBuffInfo {
+    //此次BUFF触发影响到的实体
+    repeated BuffEntityInfo buffEntityInfo = 3;
+}
+
+//技能返回信息 - 召唤技能
+message SkillResultByCallupInfo {
+
+}
+
+//技能返回信息
+message SkillResultInfo {
+    //攻击者eid
+    optional int32 attackerEid = 1;
+
+    //如果是技能攻击, 需提供技能ID
+    optional int32 skillId = 2;
+
+    //技能返回信息 - 攻击性技能
+    optional SkillResultByAttackInfo skillResultByAttackInfo = 3;
+
+    //技能返回信息 - 加血技能
+    optional SkillResultByBloodInfo skillResultByBloodInfo = 4;
+
+    //技能返回信息 - 触发BUFF技能
+    optional SkillResultByBuffInfo skillResultByBuffInfo = 5;
+
+    //技能返回信息 - 召唤技能
+    optional SkillResultByCallupInfo skillResultByCallupInfo = 6;
+}
+

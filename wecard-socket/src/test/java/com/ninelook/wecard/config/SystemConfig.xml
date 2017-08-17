@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<system-config version="1">
+    <server-url>ws://127.0.0.1:8087/websocket</server-url>
+    <!--<server-url>ws://192.168.1.89:8087/websocket</server-url>-->
+
+</system-config>

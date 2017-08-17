@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <bean class="com.ninelook.wecard.server.scene.home.HomeManager"/>
+
+    <bean class="com.ninelook.wecard.server.gateway.connection.ClientManager"/>
+
+    <bean class="com.ninelook.wecard.server.scene.player.PlayerManager"/>
+
+    <bean class="com.ninelook.wecard.server.scene.ticker.TickerService"/>
+
+    <bean class="com.ninelook.wecard.server.scene.async.AsyncProcessor"/>
+
+    <bean id="Handler_10100100" class = "com.ninelook.wecard.server.scene.handler.impl.scene.SceneLoginHandler"></bean>
+
+    <bean id="Handler_10100101" class = "com.ninelook.wecard.server.scene.handler.impl.scene.SceneOfflineHandler"></bean>
+
+    <bean id="Handler_10100102" class = "com.ninelook.wecard.server.scene.handler.impl.scene.SceneTestResetHandler"></bean>
+
+    <bean id="Handler_10200100" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeCreateHandler"></bean>
+
+    <bean id="Handler_10200101" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeJoinHandler"></bean>
+
+    <bean id="Handler_10200102" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeGoHandler"></bean>
+
+    <bean id="Handler_10200103" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeGetUserInfoHandler"></bean>
+
+    <bean id="Handler_10200104" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeLoadingFinishHandler"></bean>
+
+    <bean id="Handler_10200105" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeGetListHandler"></bean>
+
+    <bean id="Handler_10200106" class = "com.ninelook.wecard.server.scene.handler.impl.home.HomeExitHandler"></bean>
+
+    <bean id="Handler_11100200" class = "com.ninelook.wecard.server.service.handler.hero.SHeroMoveHandler"></bean>
+
+    <bean id="Handler_11100300" class = "com.ninelook.wecard.server.service.handler.fight.SFightAttackHandler"></bean>
+
+</beans>

@@ -1,0 +1,126 @@
+option java_package = "com.ninelook.wecard.protocol.beans";
+
+import "beans/BeanSceneMessage.proto";
+import "beans/BeanHeroMessage.proto";
+import "beans/BeanCreatureMessage.proto";
+import "beans/BeanBuildMessage.proto";
+import "beans/BeanCommonMessage.proto";
+
+
+
+//用户信息
+message HomeInfo {
+    //房间ID
+    required int32 homeId = 1;
+
+    //房间所属用户ID
+    required int64 ownerUid = 2;
+
+    //房间状态
+    required int32 status = 3;
+
+    //已经加入的玩家列表(TODO:最好搞成单独的)
+    repeated PlayerInfo joinPlayerList = 4;
+}
+
+//地图信息
+message MapInfo {
+    //地图ID
+    required int32 mapId = 1;
+
+    //地图宽度
+    required int32 width = 2;
+}
+
+//战场信息
+message WarInfo {
+    //房间ID
+    required int32 homeId = 1;
+
+    //地图信息
+    required MapInfo mapInfo = 2;
+
+    //上场英雄
+    repeated HeroInfo heroInfoList = 3;
+
+    //上场野怪
+    repeated CreatureInfo creatureInfoList = 4;
+
+    //上场建筑
+    repeated BuildInfo buildInfoList = 5;
+}
+
+//资源加载完成通知信息
+message LoadedInfo {
+    //房间ID
+    required int32 homeId = 1;
+
+    //完成加载的用户ID
+    repeated int64 lUid = 2;
+}
+
+//开始游戏通知信息
+message HomeGoInfo {
+    //房间用户信息
+    repeated PlayerInfo lPlayerInfo = 1;
+}
+
+//战斗奖励信息
+message WarAwardInfo {
+    //用户ID
+    required int64 uid = 1;
+
+    //奖励类型
+    required int32 awardType = 2;
+
+    //奖励列表(道具ID:道具数量)
+    repeated ItemByIntInt awardList = 3;
+}
+
+//战斗结束信息
+message WarFinishInfo {
+    //是否胜利
+    optional bool win = 1;
+
+    //奖励(道具ID)
+    repeated int32 lAward = 2;
+
+    //奖励信息
+    repeated WarAwardInfo warAwardInfo = 3;
+}
+
+//指定地图的单个房间的信息
+message MapHomeInfo {
+    //homeID
+    required int32 homeId = 1;
+
+    //房主ID
+    required int64 ownerId = 2;
+
+    //地图ID
+    required int32 mapId = 3;
+
+    //房间人数
+    required int32 playerCount = 4;
+
+    //房间状态
+    required int32 status = 5;
+}
+
+//指定地图的房间列表信息
+message MapHomeListInfo {
+    //地图内的房间列表
+    repeated MapHomeInfo lMapHomeInfo = 1;
+}
+
+//房间退出信息
+message HomeExitInfo {
+    //退出房间的用户ID
+    required int64 exitUid = 1;
+
+    //房主退出后的房主
+    optional int64 newHomeOnwerUid = 2;
+
+    //是否为离线退出
+    optional bool offline = 3;
+}
