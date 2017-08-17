@@ -1,3 +1,1 @@
-#wecard-server
-
-java game server.
+Java game server.
